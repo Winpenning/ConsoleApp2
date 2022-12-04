@@ -5,14 +5,12 @@ namespace Course
 {
     public class Produto
     {
-        private string _nome; // MANIPULADO MANUALMENTE
-        private float Valor { get; set; } // MANIPULADO AUTOMATICAMENTE
+        private float Valor { get; set; }
         private int Quantidade { get; set; }
 
-        public Produto() //CONSTRUTOR PADRÃO
-        {
-        }
-        public Produto(string nome, float preco, int quantidade) // SOBRCARGA
+        private string _nome;
+
+        public Produto(string nome, float preco, int quantidade)
         {
             _nome = nome;
             Valor = preco;
@@ -35,17 +33,13 @@ namespace Course
         {
             return Valor * Quantidade;
         }
-
-        public void Alterar(int quantidade)
+        public void Remover(int quantidade)
         {
-            if (quantidade > 0)
-            {
-                Quantidade += quantidade;
-            }
-            else
-            {
-                Quantidade -= quantidade;
-            }
+            Quantidade -= quantidade;
+        }
+        public void Adicionar(int quanidade)
+        {
+            Quantidade+= quanidade;
         }
         public override string ToString()
         {
